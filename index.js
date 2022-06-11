@@ -33,11 +33,14 @@ app.get("/", async (req, res) => {
   return res.sendFile(`${__dirname}/upload.html`);
 });
 
+//upload
+
 app.post("/upload/folder/:id", async (req, res) => {
   try {
     //Folder ID
     const folderId = `${req.params.id}`;
     console.log(folderId);
+    console.log(req.files);
 
     //upload File
     const file = req.files.myFile;
